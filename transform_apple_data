@@ -96,6 +96,12 @@ def get_loc(playlist_info_all_days):
     print(df)
     return df
     
+    # writing in the bucket
+def write_bucket_object(object_key, object_value, as_json = False):
+    if as_json:
+        object_value = bytes(json.dumps(object_value).encode('UTF-8'))
+    S3_CLIENT.put_object(Bucket=S3_BUCKET, Key=object_key, Body=object_value)
+    
 
 # Lambda handler function
 def lambda_handler(event, context):
@@ -105,6 +111,8 @@ def lambda_handler(event, context):
         playlist_info_all_days.append(read_playlist_info)
 
     get_loc(playlist_info_all_days)
+    
+    write_bucket_object("big_apple_file.csv"(get_loc(playlist_info_all_days))
 
 
 
