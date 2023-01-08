@@ -3,6 +3,8 @@ try:
     import json
     import os
     import pandas as pd
+    from datetime import datetime
+
     print("All Modules are ok ...")
     
 except Exception as e:
@@ -114,10 +116,14 @@ def lambda_handler(event, context):
     for playlist_info_daily in list_files_names():
         read_playlist_info = read_bucket_object(playlist_info_daily, as_json = True)
         playlist_info_all_days.append(read_playlist_info)
+        
+    big_apple_file_all_days_df = get_loc(playlist_info_all_days)
 
-    write_bucket_object("big_apple_file.csv"(get_loc(playlist_info_all_days)))
-
-
+    
+    dt_string = datetime.now().strftime("%Y-%m-%d_%H%M")
+    file_name = 'big_apple_file_all_days_' + dt_string + '.csv'
+    big_apple_csv = big_apple_file_all_days_df.to_csv(index=True)
+    write_bucket_object(file_name, big_apple_csv, as_json = False)
 
 
 if __name__ == "__main__":
