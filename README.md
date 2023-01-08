@@ -31,18 +31,22 @@ The repository contains eight Python files.
 
 1. README - current file
 
+To be uploaded into the S3 bucket
+
+2. playlist_ids - file with the playlist ids of each city hard coded
+
 To be run in AWS terminal or Local terminal
 
-2. boto3_layer - to create a layer for each lambda function
-3. amp_layer - to create a layer for the specific AppleMusic_ingest lambda function
-4. meteomatics_and_geopy_layer - to create a layer for the specific Meteomatics_ingest lambda function
-5. AWSSDKPandas-Python38 - to create a layer for the specific transform_weather_data lambda function
+3. boto3_layer - to create a layer for each lambda function
+4. amp_layer - to create a layer for the specific AppleMusic_ingest lambda function
+5. meteomatics_and_geopy_layer - to create a layer for the specific Meteomatics_ingest lambda function
+6. AWSSDKPandas-Python38 - to create a layer for the specific transform_weather_data lambda function
 
 To be run in AWS lambda function
 
-6. AppleMusic_ingest - lambda function to put the Apple Music playlists data into the S3 Bucket
-7. Meteomatics_ingest - lambda function to put the weather data into the S3 Bucket
-8. Musixmatch_ingest - lambda function to put the lyrics data into the S3 Bucket
+7. AppleMusic_ingest - lambda function to put the Apple Music playlists data into the S3 Bucket
+8. Meteomatics_ingest - lambda function to put the weather data into the S3 Bucket
+9. Musixmatch_ingest - lambda function to put the lyrics data into the S3 Bucket
 
 To be run in Redshift query console
 
