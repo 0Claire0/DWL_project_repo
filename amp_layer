@@ -1,0 +1,14 @@
+mkdir folder
+ cd folder 
+virtualenv v-env 
+source ./v-env/bin/activate
+
+ pip install apple-music-python
+deactivate
+
+mkdir python 
+cd python cp
+-r ../v-env/lib/python3.8/site-packages/*.
+ cd .. zip
+-r amp_layer.zip python 
+aws lambda publish-layer-version --layer-name applemusicpy --zip-file fileb://amp_layer.zip --compatible-runtimes python3.8
