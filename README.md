@@ -40,13 +40,12 @@ To be run in AWS terminal or Local terminal
 3. boto3_layer - to create a layer for each lambda function
 4. amp_layer - to create a layer for the specific AppleMusic_ingest lambda function
 5. meteomatics_and_geopy_layer - to create a layer for the specific Meteomatics_ingest lambda function
-6. AWSSDKPandas-Python38 - to create a layer for the specific transform_weather_data lambda function
 
 To be run in AWS lambda function
 
-7. AppleMusic_ingest - lambda function to put the Apple Music playlists data into the S3 Bucket
-8. Meteomatics_ingest - lambda function to put the weather data into the S3 Bucket
-9. Musixmatch_ingest - lambda function to put the lyrics data into the S3 Bucket
+6. AppleMusic_ingest - lambda function to put the Apple Music playlists data into the S3 Bucket
+7. Meteomatics_ingest - lambda function to put the weather data into the S3 Bucket
+8. Musixmatch_ingest - lambda function to put the lyrics data into the S3 Bucket
 
 To be run in Redshift query console
 
