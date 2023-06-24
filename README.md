@@ -27,7 +27,7 @@ This project uses several resources from AWS, namely S3, Lambda functions and la
 
 ### Repository files
 
-The repository contains fifteen files.
+The repository contains seventeen files.
 
 1. README - current file
 
@@ -63,6 +63,10 @@ To be run in RDS query console:
 To be run in R:
 
 16. 16_subquestion4_regression
+
+To use in Tableau Prep and Tableau:
+
+17. rds_db_credentials
 
 ## Who will use this repo or project? 
 
