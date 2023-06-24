@@ -4,7 +4,7 @@
 
 This repository was created in the context of a school project for the module of Data Warehouse and Data Lake Systems of [the Master in Applied Information and Data Science of the Lucerne University of Applied Sciences and Arts](https://www.hslu.ch/en/lucerne-school-of-business/degree-programmes/master/applied-information-and-data-science/). It aims at getting and connecting information from historic weather of 30 European cities and the lyrics of the daily Apple top 25 playlists from the same cities to confirm the role of weather in the tone of Apple Music users’ musical choices.
 
-The data collected during this project is supposed to be loaded into an Amazon S3 bucket. Moreover, a trigger is used there to get the data daily. If you want to load it somewhere else, you will need to adapt the code accordingly.
+The data collected during this project is supposed to be loaded into an Amazon S3 bucket. Moreover, a trigger is used there to get the data daily. If you want to load it somewhere else, you will need, sometimes, to adapt the code accordingly.
 
 ## How does it work?
 
@@ -19,35 +19,46 @@ This API is used to collect information regarding the daily Apple « Top 25 »
 ### Musixmatch API
 This API is used to collect the lyrics of the songs listed in the playlists. The generated API key is used in the queries to obtain 30% of the songs’ lyrics (limitation being imposed by Musixmatch for the free plan). More info available at: https://developer.musixmatch.com/
 
-### text2emotion library
-In combination with the songs’ lyrics, the text2emotion Python library is used to extract the songs’ associated emotion, or mood. More info available at: https://pypi.org/project/text2emotion/ 
+### cardiffnlp/twitter-roberta-base-emotion model
+In combination with the songs’ lyrics, the cardiffnlp/twitter-roberta-base-emotion model is used to extract the songs’ associated emotion, or mood. More info available at: https://huggingface.co/cardiffnlp/twitter-roberta-base-emotion
 
 ### Amazon Web Services (AWS)
-This project uses several resources from AWS, namely S3, Lambda functions and layers, EventBridge triggers and Redshift. Access to these resources was granted through a student lab role, as part of the module of Data Warehouse and Data Lake Systems of the Master in Applied Information and Data Science of the Lucerne University of Applied Sciences and Arts. More info available at: https://aws.amazon.com/.
+This project uses several resources from AWS, namely S3, Lambda functions and layers, EventBridge triggers and RDS. Access to these resources was granted through a student lab role, as part of the module of Data Warehouse and Data Lake Systems of the Master in Applied Information and Data Science of the Lucerne University of Applied Sciences and Arts. More info available at: https://aws.amazon.com/.
 
 ### Repository files
 
-The repository contains eight Python files.
+The repository contains fifteen files.
 
 1. README - current file
 
-To be uploaded into the S3 bucket
+To be uploaded into the S3 bucket:
 
 2. playlist_ids - file with the playlist ids of each city hard coded
 
-To be run in AWS terminal or Local terminal
+To be run in AWS terminal or Local terminal:
 
 3. boto3_layer - to create a layer for each lambda function
 4. amp_layer - to create a layer for the specific AppleMusic_ingest lambda function
 5. meteomatics_and_geopy_layer - to create a layer for the specific Meteomatics_ingest lambda function
 
-To be run in AWS lambda function
+To be run in AWS Lambda function:
 
-6. AppleMusic_ingest - lambda function to put the Apple Music playlists data into the S3 Bucket
-7. Meteomatics_ingest - lambda function to put the weather data into the S3 Bucket
-8. Musixmatch_ingest - lambda function to put the lyrics data into the S3 Bucket
+6. 1_Meteomatics_extraction - Lambda function to retrieve weather data and store it in an S3 Bucket
+7. 3_meteo_transformation - Lambda function to clean and merge weather data into a CSV file
+8. 4_apple_transformation -  Lambda function to merge Apple Music playlist data and create a CSV file
+9. 5_Musixmatch_extraction - Lambda function to create a CSV file from unique song values and add related lyrics
+10. 6_lyrics_transformation - Lambda function to clean the lyrics CSV file
 
-To be run in Redshift query console
+To be run in PyCharm:
+
+11. 2_Apple_extraction - Python file to extract the Apple Music data
+12. 7_emotion_extraction - Python file to add associated emotions to unique song values
+
+To be run in RDS query console:
+
+13. 8_export_weather_RDS
+14. 9_export_Apple_RDS
+15. 10_export_lyrics_RDS
 
 
 ## Who will use this repo or project? 
