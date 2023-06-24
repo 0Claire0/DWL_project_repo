@@ -60,6 +60,9 @@ To be run in RDS query console:
 14. 9_export_Apple_RDS
 15. 10_export_lyrics_RDS
 
+To be run in R:
+
+16. 16_subquestion4_regression
 
 ## Who will use this repo or project? 
 
