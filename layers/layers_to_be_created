@@ -1,0 +1,49 @@
+# 1_Meteomatics_extraction - Layers to be created:
+meteomatics
+geopy
+boto3
+
+# 2_Apple_extraction (To be run in PyCharm) - in a requirements file
+
+
+
+# 3_meteo_transformation - Layers to be created:
+boto3
+datetime
+pandas
+
+# 4_apple_transformation - Layers to be created:
+boto3
+datetime
+pandas
+
+# 5_Musixmatch_extraction - Layers to be created:
+boto3
+requests
+pandas
+
+# 6_lyrics_transformation - Layers to be created:
+boto3
+pandas
+
+# 7_emotion_extraction (To be run in PyCharm) - in a requirements file
+
+
+
+# 8_export_weather_RDS - Layers to be created:
+boto3
+pandas
+requests
+psycopg2
+
+# 9_export_Apple_RDS - Layers to be created:
+boto3
+pandas
+requests
+psycopg2
+
+# 10_export_lyrics_RDS - Layers to be created:
+boto3
+pandas
+requests
+psycopg2
