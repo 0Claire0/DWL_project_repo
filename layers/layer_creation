@@ -1,0 +1,53 @@
+-------# Creating a layer in the (AWS) terminal for the required libraries. Layers are to be added to the relative lambda functions (check the layers_to_be_created file)
+
+
+
+# Check the Python version (the following code is for Python 3.8 - alternative for Python 3.9)
+python -V
+
+# Create a new directory (adapt the folder_name):
+mkdir folder_name
+
+# Go into the new directory (adapt the folder_name):
+cd folder_name
+
+# Create the virtual environment
+virtualenv v-env
+
+# Alternative for Python 3.9:
+# python3.9 -m venv myenv
+
+# Activate the virtual environment
+source ./v-env/bin/activate
+
+# Alternative for Python 3.9:
+# source myenv/bin/activate
+
+
+# Install the required libraries (adapt the library_name):
+pip install library_name
+pip install library_name
+
+
+# Save the installed libraries into a requirements file
+pip freeze >> requirements.txt
+
+# Deactivate the virtual environment
+deactivate
+
+# Compress the virtual environment that contains all the libraries into a zip file (that is the layer)
+
+mkdir python
+cd python
+cp -r ../v-env/lib/python3.8/site-packages/* .
+
+# Alternative for Python 3.9:
+# cp -r ../myenv/lib/python3.9/site-packages/* .
+
+cd ..
+
+# Create the zip file (adapt the aws_layer_name)
+zip -r aws_layer_name.zip python
+
+# To be run only in AWS terminal (adapt the aws_layer_name):
+aws lambda publish-layer-version --layer-name aws_layer_name --zip-file fileb://aws_layer_name.zip --compatible-runtimes python3.8
