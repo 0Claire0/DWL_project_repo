@@ -67,7 +67,7 @@ To use in Tableau Prep and Tableau:
 
 ## Who will use this repo or project? 
 
-Despite all the care taken to ensure confidentiality, some information remained difficult to hide. This is why this repository is private and only intended to be shown to our professors.
+This repository is public but firstly intended to be shown to our professors.
 
 However, the project’s results are intended to be addressed to various stakeholders, for example:
 - Governmental Institutions, the analysis can provide an indicator of the population welfare and mindset
