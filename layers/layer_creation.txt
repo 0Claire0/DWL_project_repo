@@ -1,4 +1,4 @@
--------# Creating a layer in the (AWS) terminal for the required libraries. Layers are to be added in the relative lambda functions (check the layers_to_be_created file)
+###### Creating a layer in the (AWS) terminal for the required libraries. Layers are to be added in the relative lambda functions (check the layers_to_be_created file) ######
 
 
 
