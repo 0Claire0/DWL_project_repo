@@ -54,6 +54,7 @@ To be run in AWS Lambda function:
 
 To be run in PyCharm:
 
+- requirements.txt
 - 2_Apple_extraction - Python file to extract the Apple Music data
 - 7_emotion_extraction - Python file to add associated emotions to unique song values
 
