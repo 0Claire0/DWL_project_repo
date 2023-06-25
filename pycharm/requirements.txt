@@ -1,0 +1,7 @@
+schedule
+applemusicpy
+geopy
+transformers
+numpy
+scipy
+pandas
