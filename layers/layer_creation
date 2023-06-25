@@ -1,4 +1,4 @@
--------# Creating a layer in the (AWS) terminal for the required libraries. Layers are to be added to the relative lambda functions (check the layers_to_be_created file)
+-------# Creating a layer in the (AWS) terminal for the required libraries. Layers are to be added in the relative lambda functions (check the layers_to_be_created file)
 
 
 
@@ -23,11 +23,9 @@ source ./v-env/bin/activate
 # Alternative for Python 3.9:
 # source myenv/bin/activate
 
-
 # Install the required libraries (adapt the library_name):
 pip install library_name
 pip install library_name
-
 
 # Save the installed libraries into a requirements file
 pip freeze >> requirements.txt
