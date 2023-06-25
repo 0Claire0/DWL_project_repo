@@ -8,7 +8,7 @@ The data collected during this project is supposed to be loaded into an Amazon S
 
 ## How does it work?
 
-This project uses three APIs to access the data : Meteomatics, Apple Music API and Musixmatch. In addition, the playlists’ IDs are collected from this webpage : https://music.apple.com/us/browse/top-charts
+This project is run in a Python 3.8 environment and uses three APIs to access the data : Meteomatics, Apple Music API and Musixmatch. In addition, the playlists’ IDs are collected from this webpage : https://music.apple.com/us/browse/top-charts
 
 ### Meteomatics API
 This API is used to collect weather data of 30 European cities. An account has to be created, and the credentials are needed when querying the API. More info at: http://meteomatics.com
@@ -29,44 +29,41 @@ This project uses several resources from AWS, namely S3, Lambda functions and la
 
 The repository contains seventeen files.
 
-1. README - current file
+- README - current file
 
 To be uploaded into the S3 bucket:
 
-2. playlist_ids - file with the playlist ids of each city hard coded
+- playlist_ids - file with the playlist ids of each city hard coded
 
 To be run in AWS terminal or Local terminal:
 
-3. boto3_layer - to create a layer for each lambda function
-4. amp_layer - to create a layer for the specific AppleMusic_ingest lambda function
-5. meteomatics_and_geopy_layer - to create a layer for the specific Meteomatics_ingest lambda function
+- boto3_layer - to create a layer for each lambda function
+- amp_layer - to create a layer for the specific AppleMusic_ingest lambda function
+- meteomatics_and_geopy_layer - to create a layer for the specific Meteomatics_ingest lambda function
 
 To be run in AWS Lambda function:
 
-6. 1_Meteomatics_extraction - Lambda function to retrieve weather data and store it in an S3 Bucket
-7. 3_meteo_transformation - Lambda function to clean and merge weather data into a CSV file
-8. 4_apple_transformation -  Lambda function to merge Apple Music playlist data and create a CSV file
-9. 5_Musixmatch_extraction - Lambda function to create a CSV file from unique song values and add related lyrics
-10. 6_lyrics_transformation - Lambda function to clean the lyrics CSV file
+- 1_Meteomatics_extraction - Lambda function to retrieve weather data and store it in an S3 Bucket
+- 3_meteo_transformation - Lambda function to clean and merge weather data into a CSV file
+- 4_apple_transformation -  Lambda function to merge Apple Music playlist data and create a CSV file
+- 5_Musixmatch_extraction - Lambda function to create a CSV file from unique song values and add related lyrics
+- 6_lyrics_transformation - Lambda function to clean the lyrics CSV file
+- 8_export_weather_RDS
+- 9_export_Apple_RDS
+- 10_export_lyrics_RDS
 
 To be run in PyCharm:
 
-11. 2_Apple_extraction - Python file to extract the Apple Music data
-12. 7_emotion_extraction - Python file to add associated emotions to unique song values
-
-To be run in RDS query console:
-
-13. 8_export_weather_RDS
-14. 9_export_Apple_RDS
-15. 10_export_lyrics_RDS
+- 2_Apple_extraction - Python file to extract the Apple Music data
+- 7_emotion_extraction - Python file to add associated emotions to unique song values
 
 To be run in R:
 
-16. 16_subquestion4_regression
+- 16_subquestion4_regression
 
 To use in Tableau Prep and Tableau:
 
-17. rds_db_credentials
+- rds_db_credentials
 
 ## Who will use this repo or project? 
 
