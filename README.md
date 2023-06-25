@@ -37,9 +37,8 @@ To be uploaded into the S3 bucket:
 
 To be run in AWS terminal or Local terminal:
 
-- boto3_layer - to create a layer for each lambda function
-- amp_layer - to create a layer for the specific AppleMusic_ingest lambda function
-- meteomatics_and_geopy_layer - to create a layer for the specific Meteomatics_ingest lambda function
+- layers_to_be_created
+- layer_creation
 
 To be run in AWS Lambda function:
 
