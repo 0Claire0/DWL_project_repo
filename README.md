@@ -73,8 +73,9 @@ To use in Tableau Prep and Tableau:
 Despite all the care taken to ensure confidentiality, some information remained difficult to hide. This is why this repository is private and only intended to be shown to our professors.
 
 However, the project’s results are intended to be addressed to various stakeholders, for example:
-- Physical stores, as part of the selection of their background music, to be played for customers
-- Musical streaming companies, as part of their recommendation algorithms, to take into account the local weather
+- Governmental Institutions, the analysis can provide an indicator of the population welfare and mindset
+- Mental Health Instances, the analysis can provide insights based on meteorological data as to the possibility of mental relapse for high risk people and could therefore enhance preventive measures
+- Musical Platforms, the use of the analysis can provide pattern for musical platform to propose specific playlists to influence the emotional state of listeners
 
 ## What is the goal of this project?
 
