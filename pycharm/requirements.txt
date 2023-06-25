@@ -1,5 +1,5 @@
 schedule
-applemusicpy
+apple-music-python
 geopy
 transformers
 numpy
