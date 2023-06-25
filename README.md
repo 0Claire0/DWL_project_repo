@@ -59,7 +59,7 @@ To be run in PyCharm:
 
 To be run in R:
 
-- 16_subquestion4_regression
+- 11_subquestion4_regression
 
 To use in Tableau Prep and Tableau:
 
